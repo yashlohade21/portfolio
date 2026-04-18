@@ -15,6 +15,9 @@ const Photo = () => {
         }}
         className="relative"
       >
+        {/* Glow effect behind photo */}
+        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#fbbf24]/20 to-[#f97316]/20 blur-3xl scale-110" />
+
         <motion.div
           initial={{ opacity: 0 }}
           animate={{
@@ -28,7 +31,7 @@ const Photo = () => {
             priority
             quality={100}
             fill
-            alt=""
+            alt="Yash Lohade"
             className="object-contain"
           />
         </motion.div>
@@ -39,11 +42,17 @@ const Photo = () => {
           viewBox="0 0 506 506"
           xmlns="http://www.w3.org/2000/svg"
         >
+          <defs>
+            <linearGradient id="circleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#fbbf24" />
+              <stop offset="100%" stopColor="#f97316" />
+            </linearGradient>
+          </defs>
           <motion.circle
             cx="253"
             cy="253"
             r="250"
-            stroke="#00ff99"
+            stroke="url(#circleGradient)"
             strokeWidth="4"
             strokeLinecap="round"
             strokeLinejoin="round"
